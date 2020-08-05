@@ -6,7 +6,7 @@ import styles from './Document.css';
 export default class Document extends PureComponent {
   
   render() {
-      return(
+    return (
       <>
         <div className={styles.Document}>
           <Editor />
