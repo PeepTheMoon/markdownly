@@ -5,13 +5,13 @@ export const initialState = {
     title: 'markdown 1',
     markdown: 'abolish ICE hoe'
   }]
-}
+};
 
 export default function reducer(state, action) {
   switch(action.type) {
     case EDIT_MARKDOWN: 
-      return {...state, markdown: action.payload};
+      return { ...state, markdown: action.payload };
     default:
-        return state;
+      return state;
   }
 }
