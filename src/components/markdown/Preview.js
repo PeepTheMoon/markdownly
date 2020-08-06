@@ -1,15 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import marked from 'marked';
 import styles from 'github-markdown-css/github-markdown.css';
+import { useSelector }  from '../../hooks/Context';
+import { getMarkdownPreview } from '../../selectors/selectors';
 
-const Preview = ({ markdown }) => {
-  const __html = marked(markdown);
-  return <div className={styles['markdown-body']} dangerouslySetInnerHTML={{ __html }}></div>;
-};
+const Preview = () => {
+  const __html = useSelector(getMarkdownPreview);
 
-Preview.propTypes = {
-  markdown: PropTypes.string.isRequired
+  return (
+    <>
+      <div className={styles['markdown-body']} dangerouslySetInnerHTML={{ __html }}></div>
+    </>
+  );
 };
 
 export default Preview;
