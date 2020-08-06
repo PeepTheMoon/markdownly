@@ -3,9 +3,8 @@ import { useSelector } from '../../hooks/Context';
 import { getMarkdown } from '../../selectors/selectors';
 
 const SaveMarkdown = () => {
-  const select = useSelector()
   const [title, setTitle] = useState('');
-  const markdown = select(getMarkdown);
+  const markdown = useSelector(getMarkdown);
 
   const handleChange = ({ target }) => {
     setTitle(target.value);
