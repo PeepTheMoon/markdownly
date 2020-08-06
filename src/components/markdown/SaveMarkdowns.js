@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-// import { useSelector } from '../../hooks/Context';
+
 
 const SaveMarkdown = () => {
   const [title, setTitle] = useState('');
+  const markdown = dispatch(getMarkdown);
 
   const handleChange = ({ target }) => {
     setTitle(target.value);
@@ -10,6 +11,11 @@ const SaveMarkdown = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
+    
+    dispatch(saveMarkdown({
+      title: title, 
+      markdown: markdown
+    }))
   };
   
   return (
