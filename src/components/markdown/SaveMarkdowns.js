@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-
+import { useDispatch } from '../../hooks/Context';
+import { getMarkdown } from '../../selectors/selectors';
 
 const SaveMarkdown = () => {
+  const dispatch = useDispatch()
   const [title, setTitle] = useState('');
   const markdown = dispatch(getMarkdown);
 
@@ -15,7 +17,7 @@ const SaveMarkdown = () => {
     dispatch(saveMarkdown({
       title: title, 
       markdown: markdown
-    }))
+    }));
   };
   
   return (
