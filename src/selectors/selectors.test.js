@@ -1,4 +1,4 @@
-const { getMarkdown, getMarkdownPreview } = require('./selectors');
+const { getMarkdown, getMarkdownPreview, getMarkdownTitles } = require('./selectors');
 
 describe('selectors', () => {
   it('returns markdown from state', () => {
@@ -16,5 +16,15 @@ describe('selectors', () => {
 
     const markdownPreview = getMarkdownPreview(state);
     expect(markdownPreview).toEqual(expect.stringContaining('abolish ICE hoe'));
+  });
+
+  it('returns markdown titles', () => {
+    const state = {
+      title: 'Yo Mama Makes Good Biscuits'
+    };
+
+    const markdownTitles = getMarkdownTitles(state);
+
+    expect(markdownTitles).toEqual('Yo Mama Makes Good Biscuits');
   });
 });
