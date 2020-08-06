@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { useDispatch } from '../../hooks/Context';
+import { useSelector } from '../../hooks/Context';
 import { getMarkdown } from '../../selectors/selectors';
 
 const SaveMarkdown = () => {
-  const dispatch = useDispatch()
+  const select = useSelector()
   const [title, setTitle] = useState('');
-  const markdown = dispatch(getMarkdown);
+  const markdown = select(getMarkdown);
 
   const handleChange = ({ target }) => {
     setTitle(target.value);

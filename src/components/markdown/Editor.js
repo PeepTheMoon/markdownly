@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Editor.css';
-import { useDispatch, useSelector}  from '../../hooks/Context';
+import { useDispatch, useSelector }  from '../../hooks/Context';
 import { editMarkdown }from '../../actions/reducerActions';
 import { getMarkdown } from '../../selectors/selectors';
 
@@ -14,7 +14,7 @@ const Editor = () => {
 
   return (
     <textarea className={styles.Editor} value={markdown} onChange={handleChange} />
-  )
+  );
 };
 
 export default Editor;

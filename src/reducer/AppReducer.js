@@ -16,6 +16,8 @@ export default function reducer(state, action) {
     case SAVE_MARKDOWN: 
       return { ...state, savedMarkdowns: [ ...state.savedMarkdowns, action.payload ]
     }
+    case REMOVE_MARKDOWN: 
+      return { ...state, savedMarkdowns: }
     default:
       return state;
   }
