@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Editor.css';
-import { useDispatch, useSelector } from '../../hooks/Context';
-import { editMarkdown } from '../../actions/reducerActions';
+import { useDispatch, useSelector }  from '../../hooks/Context';
+import { editMarkdown }from '../../actions/reducerActions';
 import { getMarkdown } from '../../selectors/selectors';
 
 const Editor = () => {

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SaveMarkdowns component renders SaveMarkdowns 1`] = `
+<AppProvider>
+  <SaveMarkdown>
+    <form
+      onSubmit={[Function]}
+    >
+      <input
+        onChange={[Function]}
+        placeholder="Title"
+        type="text"
+        value=""
+      />
+      <button>
+        Save
+      </button>
+    </form>
+  </SaveMarkdown>
+</AppProvider>
+`;
