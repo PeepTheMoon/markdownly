@@ -10,6 +10,12 @@ exports[`MarkdownList component renders MarkdownList 1`] = `
         <p>
           markdown 1
         </p>
+        <button
+          onClick={[Function]}
+          value="markdown 1"
+        >
+          Delete
+        </button>
       </li>
     </ul>
   </MarkdownList>
