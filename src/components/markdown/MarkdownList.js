@@ -20,16 +20,3 @@ const MarkdownList = () =>  {
 };
 
 export default MarkdownList;
-
-
-// const markdownList = [
-//   'test 1',
-//   'test 2',
-//   'test 3'
-// ];
-
-// const markdownListElements = markdownList.map(({ title, i }) => (
-//   <li key={title + i}>
-//     <p>{i}</p>
-//   </li>
-// ));
