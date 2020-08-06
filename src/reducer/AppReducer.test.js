@@ -1,4 +1,4 @@
-const { editMarkdown, saveMarkdown } = require('../actions/reducerActions');
+const { editMarkdown, saveMarkdown, deleteMarkdown } = require('../actions/reducerActions');
 
 const { default: reducer } = require('./AppReducer');
 
@@ -38,9 +38,30 @@ describe('AppReducer', () => {
         title: 'new title',
         markdown: 'new markdown'
       }]
+    });
+  });
+
+  it('deletes a markdown from savedMarkdowns', () => {
+    const state = {
+      markdown: 'test markdown',
+      savedMarkdowns: [{
+        title: 'markdown 1',
+        markdown: 'abolish ICE hoe'
+      }, {
+        title: 'new title',
+        markdown: 'new markdown'
+      }]
+    }
+
+    const action = deleteMarkdown('markdown 1');
+    const newState = reducer(state, action);
+
+    expect(newState).toEqual({
+      markdown: 'test markdown',
+      savedMarkdowns: [{
+        title: 'new title',
+        markdown: 'new markdown'
+      }]
     })
-
-
-  })
 });
-
+});

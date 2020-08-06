@@ -5,7 +5,7 @@ import { getMarkdown } from '../../selectors/selectors';
 const SaveMarkdown = () => {
   const [title, setTitle] = useState('');
   const markdown = useSelector(getMarkdown);
-  
+
   const handleChange = ({ target }) => {
     setTitle(target.value);
   };
