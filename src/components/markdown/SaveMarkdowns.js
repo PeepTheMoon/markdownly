@@ -3,8 +3,6 @@ import { useSelector, useDispatch } from '../../hooks/Context';
 import { getMarkdown } from '../../selectors/selectors';
 import { saveMarkdown } from '../../actions/reducerActions';
 
-
-
 const SaveMarkdown = () => {
   const [title, setTitle] = useState('');
   const markdown = useSelector(getMarkdown);
@@ -26,8 +24,10 @@ const SaveMarkdown = () => {
   
   return (
     <form onSubmit={handleSubmit}>
+
       <input type="text" placeholder="Title" onChange={handleChange} value={title}/>
       <button>Save</button>
+
     </form>
   );
 };

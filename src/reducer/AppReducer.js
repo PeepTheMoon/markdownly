@@ -1,5 +1,6 @@
 import { EDIT_MARKDOWN, SAVE_MARKDOWN, DELETE_MARKDOWN } from '../actions/reducerActions';
 export const initialState = {
+  searchQuery: '',
   markdown: 'fuck facism, ABOLISH ICE, ABOLISH THE POLICE',
   savedMarkdowns: [
     {

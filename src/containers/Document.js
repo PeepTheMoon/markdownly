@@ -18,3 +18,5 @@ export default class Document extends PureComponent {
     ;
   }
 }
+
+//save markdown is going to have to be in a header so that it doesn't mess up the editor css 
