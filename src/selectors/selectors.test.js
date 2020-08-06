@@ -2,29 +2,47 @@ const { getMarkdown, getMarkdownPreview, getMarkdownTitles } = require('./select
 
 describe('selectors', () => {
   it('returns markdown from state', () => {
-    const state = {
-      markdown: 'abolish ICE hoe'
+    const state = { 
+      markdown: 'fuck facism, ABOLISH ICE, ABOLISH THE POLICE',
+      savedMarkdowns: [
+        {
+          title: 'markdown 1',
+          markdown: 'abolish ICE hoe'
+        }
+      ] 
     };
     const savedMarkdowns = getMarkdown(state);
-    expect(savedMarkdowns).toEqual('abolish ICE hoe');
+    expect(savedMarkdowns).toEqual('fuck facism, ABOLISH ICE, ABOLISH THE POLICE');
   }); 
 
   it('returns markdown preview from state', () => {
-    const state = {
-      markdown: 'abolish ICE hoe'
+    const state = { 
+      markdown: 'fuck facism, ABOLISH ICE, ABOLISH THE POLICE',
+      savedMarkdowns: [
+        {
+          title: 'markdown 1',
+          markdown: 'abolish ICE hoe'
+        }
+      ] 
     };
 
     const markdownPreview = getMarkdownPreview(state);
-    expect(markdownPreview).toEqual(expect.stringContaining('abolish ICE hoe'));
+    expect(markdownPreview).toEqual(expect.stringContaining('fuck facism, ABOLISH ICE, ABOLISH THE POLICE'));
   });
 
   it('returns markdown titles', () => {
-    const state = {
-      title: 'Yo Mama Makes Good Biscuits'
+    const state = { 
+      markdown: 'fuck facism, ABOLISH ICE, ABOLISH THE POLICE',
+      savedMarkdowns: [
+        {
+          title: 'markdown 1',
+          markdown: 'abolish ICE hoe'
+        }
+      ] 
     };
 
     const markdownTitles = getMarkdownTitles(state);
 
-    expect(markdownTitles).toEqual('Yo Mama Makes Good Biscuits');
+    expect(markdownTitles).toEqual(['markdown 1']);
   });
 });
