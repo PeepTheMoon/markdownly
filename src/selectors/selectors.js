@@ -10,5 +10,7 @@ export const getMarkdownTitles = state => {
   return state.savedMarkdowns
     .map(markdown => (
       markdown.title
-    ));
+    ))
+    .filter(title => (title.includes(state.searchQuery)));
 };
+

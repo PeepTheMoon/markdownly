@@ -5,7 +5,7 @@ import { deleteMarkdown } from '../../actions/reducerActions';
 
 
 const MarkdownList = () =>  {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const markdownList = useSelector(getMarkdownTitles);
 
   const markdownListElements = markdownList.map((title, i) => (
