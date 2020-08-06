@@ -1,12 +1,15 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import MarkdownList from './MarkdownList';
-
-jest.mock('../../hooks/Context');
+import AppProvider from '../../providers/AppProvider';
 
 describe('MarkdownList component', () => {
   it('renders MarkdownList', () => {
-    const wrapper = shallow(<MarkdownList />);
+    const wrapper = mount(
+      <AppProvider>
+        <MarkdownList />
+      </AppProvider> 
+    );
     expect(wrapper).toMatchSnapshot();
   });
 });
