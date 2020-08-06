@@ -21,12 +21,12 @@ describe('AppReducer', () => {
         title: 'markdown 1',
         markdown: 'abolish ICE hoe'
       }]
-    }
+    };
     const newMarkdown = {
       title: 'new title',
       markdown: 'new markdown'
-    }
-    const action = saveMarkdown(newMarkdown)
+    };
+    const action = saveMarkdown(newMarkdown);
     const newState = reducer(state, action);
     
     expect(newState).toEqual({
@@ -51,7 +51,7 @@ describe('AppReducer', () => {
         title: 'new title',
         markdown: 'new markdown'
       }]
-    }
+    };
 
     const action = deleteMarkdown('markdown 1');
     const newState = reducer(state, action);
@@ -62,6 +62,6 @@ describe('AppReducer', () => {
         title: 'new title',
         markdown: 'new markdown'
       }]
-    })
-});
+    });
+  });
 });

@@ -12,3 +12,10 @@ export const getMarkdownTitles = state => {
       markdown.title
     ));
 };
+
+export const searchByTitle = state => {
+  return state.savedMarkdowns
+    .filter(markdown => {
+      markdown.title;
+    });
+};

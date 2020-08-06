@@ -14,10 +14,10 @@ export default function reducer(state, action) {
     case EDIT_MARKDOWN: 
       return { ...state, markdown: action.payload };
     case SAVE_MARKDOWN: 
-      return { ...state, savedMarkdowns: [ ...state.savedMarkdowns, action.payload ]
-    }
+      return { ...state, savedMarkdowns: [...state.savedMarkdowns, action.payload]
+      };
     case DELETE_MARKDOWN: 
-      return { ...state, savedMarkdowns:  [ ...state. savedMarkdowns.filter(item => item.title !== action.payload) ] }
+      return { ...state, savedMarkdowns:  [...state. savedMarkdowns.filter(item => item.title !== action.payload)] };
     default:
       return state;
   }
