@@ -17,7 +17,7 @@ export default function reducer(state, action) {
       return { ...state, savedMarkdowns: [ ...state.savedMarkdowns, action.payload ]
     }
     case DELETE_MARKDOWN: 
-    return { ...state, savedMarkdowns:  [ ...state. savedMarkdowns.filter(item => item.title !== action.payload) ] }
+      return { ...state, savedMarkdowns:  [ ...state. savedMarkdowns.filter(item => item.title !== action.payload) ] }
     default:
       return state;
   }

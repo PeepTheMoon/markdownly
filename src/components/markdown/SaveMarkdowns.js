@@ -12,11 +12,13 @@ const SaveMarkdown = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
+
     
     dispatch(saveMarkdown({
       title: title, 
       markdown: markdown
     }));
+
   };
   
   return (
