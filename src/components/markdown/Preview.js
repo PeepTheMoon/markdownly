@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from 'github-markdown-css/github-markdown.css';
-import { useSelector}  from '../../hooks/Context';
+import { useSelector }  from '../../hooks/Context';
 import { getMarkdownPreview } from '../../selectors/selectors';
 
 const Preview = () => {
@@ -8,8 +8,8 @@ const Preview = () => {
 
   return (
     <>
-  <div className={styles['markdown-body']} dangerouslySetInnerHTML={{ __html }}></div>
-  </>
+      <div className={styles['markdown-body']} dangerouslySetInnerHTML={{ __html }}></div>
+    </>
   );
 };
 

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MarkdownList component renders MarkdownList 1`] = `
+<AppProvider>
+  <MarkdownList>
+    <ul>
+      <li
+        key="0"
+      >
+        <p>
+          markdown 1
+        </p>
+      </li>
+    </ul>
+  </MarkdownList>
+</AppProvider>
+`;
