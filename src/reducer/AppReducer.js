@@ -1,6 +1,13 @@
-import { EDIT_MARKDOWN, SAVE_MARKDOWN, DELETE_MARKDOWN } from '../actions/reducerActions';
+import { 
+  EDIT_MARKDOWN, 
+  SAVE_MARKDOWN, 
+  DELETE_MARKDOWN, 
+  SET_SEARCH
+} from '../actions/reducerActions';
+
 export const initialState = {
   searchQuery: '',
+  searchCategory: 'title',
   markdown: 'fuck facism, ABOLISH ICE, ABOLISH THE POLICE',
   savedMarkdowns: [
     {
@@ -19,6 +26,9 @@ export default function reducer(state, action) {
       };
     case DELETE_MARKDOWN: 
       return { ...state, savedMarkdowns:  [...state. savedMarkdowns.filter(item => item.title !== action.payload)] };
+    case SET_SEARCH:
+      return { ...state, 
+        searchCategory: action.payload.searchCategory, searchQuery: action.payload.searchQuery };
     default:
       return state;
   }

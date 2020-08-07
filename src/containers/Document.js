@@ -3,6 +3,7 @@ import Preview from '../components/markdown/Preview';
 import Editor from '../components/markdown/Editor';
 import styles from './Document.css';
 import SaveMarkdowns from '../components/markdown/SaveMarkdowns';
+import MarkdownList from '../components/markdown/MarkdownList';
 
 export default class Document extends PureComponent {
   
@@ -13,6 +14,7 @@ export default class Document extends PureComponent {
           <Editor />
           <Preview />
           <SaveMarkdowns />
+          <MarkdownList />
         </div>
       </>)
     ;
