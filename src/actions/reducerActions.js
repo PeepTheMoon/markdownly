@@ -17,3 +17,9 @@ export const deleteMarkdown = (title) => ({
   type: DELETE_MARKDOWN,
   payload: title
 });
+
+export const SET_SEARCH = 'SET_SEARCH';
+export const setSearch = (searchQuery, searchCategory) => ({
+  type: SET_SEARCH,
+  payload: { searchCategory, searchQuery }
+});

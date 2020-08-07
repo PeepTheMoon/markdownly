@@ -2,6 +2,7 @@ import React from 'react';
 import { getMarkdownTitles } from '../../selectors/selectors';
 import { useSelector, useDispatch } from '../../hooks/Context';
 import { deleteMarkdown } from '../../actions/reducerActions';
+import SearchBar from '../searchbar/SearchBar';
 
 
 const MarkdownList = () =>  {
@@ -9,6 +10,9 @@ const MarkdownList = () =>  {
   const markdownList = useSelector(getMarkdownTitles);
 
   const markdownListElements = markdownList.map((title, i) => (
+
+    
+
     <li key={i}>
       <p>{title}</p>
       <button value={title} onClick={({ target }) => dispatch(deleteMarkdown(target.value))}>Delete</button>
@@ -16,9 +20,13 @@ const MarkdownList = () =>  {
   ));
   
   return (
-    <ul>
-      {markdownListElements}    
-    </ul>
+    <>
+      <SearchBar />
+      <ul>
+        {markdownListElements}    
+      </ul>
+    </>
+
   );
 };
 

@@ -8,9 +8,10 @@ export const getMarkdownPreview = state => marked(state.markdown);
 
 export const getMarkdownTitles = state => {
   return state.savedMarkdowns
+    .filter(markdown => (markdown[state.searchCategory].includes(state.searchQuery)))
     .map(markdown => (
       markdown.title
-    ))
-    .filter(title => (title.includes(state.searchQuery)));
+    ));
+    
 };
 

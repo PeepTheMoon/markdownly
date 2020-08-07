@@ -24,7 +24,6 @@ const SaveMarkdown = () => {
   
   return (
     <form onSubmit={handleSubmit}>
-
       <input type="text" placeholder="Title" onChange={handleChange} value={title}/>
       <button>Save</button>
 

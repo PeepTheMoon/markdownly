@@ -1,27 +1,47 @@
-// import React, { useState } from 'react';
-// import { useSelector, useDispatch } from '../../hooks/Context';
-// import { getMarkdown, searchByTitle } from '../../selectors/selectors';
+import React, { useState } from 'react';
+import { useDispatch } from '../../hooks/Context';
+import { setSearch } from '../../actions/reducerActions';
 
 
-// const SearchBar = () => {
-//   const [search, setSearch] = useState('');
+const SearchBar = () => {
+  const [query, setQuery] = useState('');
+  const [category, setCategory] = useState('');
+  const dispatch = useDispatch ();
 
-//   const handleChange = ({ target }) => {
-//     setSearch(target.value);
-//   };
+  const handleQuery = ({ target }) => {
+    setQuery(target.value);
+  };
 
-//   const handleSubmit = event => {
-//     event.preventDefault();
+  const handleCategory = ({ target }) => {
+    setCategory(target.value);
+  };
 
-//     return useSelector(searchByTitle(search));
-//   };
+  const handleSubmit = event => {
+    event.preventDefault();
 
-//   return (
-//     <form onSubmit={handleSubmit}>
+    return dispatch (setSearch(query, category));
+  };
 
-//       <input type="text" placeholder="Title" onChange={handleChange} value={title}/>
-//       <button>Save</button>
+  return (
+    <form onSubmit={handleSubmit}>
+    
+      <label>
+          Body
+        <input type="radio" name="searchCategory" checked={category === 'markdown'} value="markdown" onChange={handleCategory}/>
+      </label>
+      
+      <label>
+          Title
+        <input type="radio" name="searchCategory" checked={category === 'title'} value="title" onChange={handleCategory}/>
+      </label>
 
-//     </form>
-//   );
-// };
+      
+
+      <input type="text" placeholder="Search" name="searchQuery" onChange={handleQuery} value={query}/>
+      <button>Search</button>
+
+    </form>
+  );
+};
+
+export default SearchBar;

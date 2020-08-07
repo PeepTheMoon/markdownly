@@ -3,6 +3,42 @@
 exports[`MarkdownList component renders MarkdownList 1`] = `
 <AppProvider>
   <MarkdownList>
+    <SearchBar>
+      <form
+        onSubmit={[Function]}
+      >
+        <label>
+          Body
+          <input
+            checked={false}
+            name="searchCategory"
+            onChange={[Function]}
+            type="radio"
+            value="markdown"
+          />
+        </label>
+        <label>
+          Title
+          <input
+            checked={false}
+            name="searchCategory"
+            onChange={[Function]}
+            type="radio"
+            value="title"
+          />
+        </label>
+        <input
+          name="searchQuery"
+          onChange={[Function]}
+          placeholder="Search"
+          type="text"
+          value=""
+        />
+        <button>
+          Search
+        </button>
+      </form>
+    </SearchBar>
     <ul>
       <li
         key="0"
